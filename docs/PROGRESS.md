@@ -19,8 +19,8 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 | Phase | Focus | State |
 |---|---|---|
 | F0 | Repo and process foundation | **done** (2026-08-16) |
-| F1 | Discovery and problem framing | in progress |
-| F2 | Product strategy | not started |
+| F1 | Discovery and problem framing | **done** (2026-08-16) |
+| F2 | Product strategy | in progress |
 | F3 | Solution design | not started |
 | F4 | Architecture | not started |
 | F5 | MVP construction | not started |
@@ -66,13 +66,13 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Current phase
 
-**F1 — Discovery and problem framing.** F1.1 and F1.2 complete; next is F1.3
-(opportunity map), which closes the phase.
+**F2 — Product strategy.** F1 closed 2026-08-16; see
+[`docs/discovery/opportunity-map.md`](discovery/opportunity-map.md).
 
 ## Next step
 
-F1.3 — synthesise the opportunity map from the self-interview and the secondary
-research. Output: `docs/discovery/opportunity-map.md`. Gate for F1.
+F2.1 — write the product vision and formalise the ICP, resolving tension T1.
+Output: `docs/product/vision.md`.
 
 ## Session log
 
@@ -82,3 +82,4 @@ research. Output: `docs/discovery/opportunity-map.md`. Gate for F1.
 | 2026-08-16 | F1 | F0 closed. Self-interview conducted; 7 candidate pains recorded; tensions T1-T3 opened. |
 | 2026-08-16 | F1 | F1.2 done. P1/P2 strongly corroborated externally; P3 real but crowded; P4/P5/P7 dropped from MVP consideration. |
 | 2026-08-16 | F1 | F1.2b done. Empty quadrant identified (open source + local-first + low setup). Logseq OG entered maintenance-only mode — displaced users are the initial audience candidate. |
+| 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
