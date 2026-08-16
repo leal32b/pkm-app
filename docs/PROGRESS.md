@@ -33,6 +33,11 @@ Read this first when resuming work.
 | [0001](adr/0001-record-architecture-decisions.md) | Record all decisions as ADRs | 2026-08-16 |
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
 
+Process artifacts:
+- `docs/internal/copilot-prompt.md` — the master prompt that drives the
+  copilot sessions. Written in pt-BR (see `docs/internal/README.md`).
+  Versioned so that session context is reproducible from the repo alone.
+
 Decided but not yet recorded as ADRs (pending, F4):
 - Tauri as the desktop framework (retroactive ADR, with trade-offs and revisit triggers)
 - SolidJS as the frontend framework
@@ -51,8 +56,8 @@ Decided but not yet recorded as ADRs (pending, F4):
 
 ## Next step
 
-Finish F0 by committing README, CLAUDE.md, PROGRESS.md and the two ADRs,
-then start F1 (discovery).
+Finish F0 by committing README, CLAUDE.md, PROGRESS.md, the two ADRs and the
+internal notes area, then start F1 (discovery).
 
 ## Session log
 

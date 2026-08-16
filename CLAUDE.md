@@ -18,7 +18,10 @@ states that phase F5 has started.
 
 - Conversation with the maintainer: **pt-BR**.
 - Everything committed to this repository — code, identifiers, comments, file
-  names, commit messages, documentation: **English**. No exceptions.
+  names, commit messages, documentation: **English**.
+- Single exception: `docs/internal/`, which holds the maintainer's personal
+  working documents and may be written in pt-BR. Nothing in `docs/internal/`
+  is project documentation; do not link to it from public docs.
 
 ## Stack
 
