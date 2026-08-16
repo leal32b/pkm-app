@@ -52,9 +52,9 @@ Carried from F0:
   distributing outside the App Store. Not yet acquired. Blocking for F6.
 
 Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-interview.md)):
-- **T1 — ICP contradiction.** The evidenced pains belong to an experienced PKM
-  power user, not to the "non-technical people" audience assumed at project
-  start. These are two different products. To be decided in F2. `[ASSUMPTION]`
+- ~~T1 — ICP contradiction.~~ **Resolved 2026-08-16** in
+  [`docs/product/icp.md`](product/icp.md): the audience is experienced PKM users
+  in decline, not non-technical beginners.
 - **T2 — Offline-first vs LLM.** Natural-language querying of one's own notes is
   the hottest signal, but a local model is heavy and a remote API breaks
   offline-first and note privacy. To be decided in F2/F4.
@@ -71,8 +71,8 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Next step
 
-F2.1 — write the product vision and formalise the ICP, resolving tension T1.
-Output: `docs/product/vision.md`.
+F2.2 — hypotheses, risks and cheap experiments, resolving tensions T2 and T3.
+Output: `docs/product/hypotheses-and-risks.md`.
 
 ## Session log
 
@@ -83,3 +83,4 @@ Output: `docs/product/vision.md`.
 | 2026-08-16 | F1 | F1.2 done. P1/P2 strongly corroborated externally; P3 real but crowded; P4/P5/P7 dropped from MVP consideration. |
 | 2026-08-16 | F1 | F1.2b done. Empty quadrant identified (open source + local-first + low setup). Logseq OG entered maintenance-only mode — displaced users are the initial audience candidate. |
 | 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
+| 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
