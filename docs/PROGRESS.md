@@ -1,7 +1,7 @@
 ---
 status: living
 date: 2026-08-16
-version: 1.0
+version: 1.1
 ---
 
 # Progress
@@ -11,14 +11,15 @@ Read this first when resuming work.
 
 ## Current phase
 
-**F0 — Foundation** (repo and process setup). Nearly complete.
+**F1 — Discovery and problem framing.** Step F1.1 (self-interview) complete;
+next is F1.2 (secondary research to corroborate the candidate pains).
 
 ## Phase map
 
 | Phase | Focus | State |
 |---|---|---|
-| F0 | Repo and process foundation | in progress |
-| F1 | Discovery and problem framing | not started |
+| F0 | Repo and process foundation | **done** (2026-08-16) |
+| F1 | Discovery and problem framing | in progress |
 | F2 | Product strategy | not started |
 | F3 | Solution design | not started |
 | F4 | Architecture | not started |
@@ -45,22 +46,33 @@ Decided but not yet recorded as ADRs (pending, F4):
 
 ## Open questions
 
+Carried from F0:
 - Product name (deferred to F2/F3; `pkm-app` is a working title).
-- Discovery method: maintainer has no guaranteed access to interviewees, so F1
-  will rely on secondary research (forums, issue trackers, reviews) plus
-  disciplined auto-ethnography of the maintainer's own Logseq usage.
 - Apple Developer account (USD 99/year) is required for notarization even when
   distributing outside the App Store. Not yet acquired. Blocking for F6.
-- Tension to resolve in F1: "for non-technical people" and "offline-first local
-  files" pull in opposite directions. The real ICP is undecided. `[ASSUMPTION]`
+
+Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-interview.md)):
+- **T1 — ICP contradiction.** The evidenced pains belong to an experienced PKM
+  power user, not to the "non-technical people" audience assumed at project
+  start. These are two different products. To be decided in F2. `[ASSUMPTION]`
+- **T2 — Offline-first vs LLM.** Natural-language querying of one's own notes is
+  the hottest signal, but a local model is heavy and a remote API breaks
+  offline-first and note privacy. To be decided in F2/F4.
+- **T3 — Opinionated vs power-user needs.** Graph-wide editing and periodic notes
+  are normally answered with plugins or settings. Scope is closed (ADR 0002), so
+  each must be answered with a default or refused outright. To be decided in F3.
+- Discovery method: no guaranteed access to interviewees, so F1 relies on
+  secondary research (forums, issue trackers, reviews) plus the self-interview.
 
 ## Next step
 
-Finish F0 by committing README, CLAUDE.md, PROGRESS.md, the two ADRs and the
-internal notes area, then start F1 (discovery).
+F1.2 — corroborate candidate pains P1-P7 against public evidence from Logseq and
+Obsidian users (forums, issue trackers, reviews). Output:
+`docs/discovery/secondary-research.md`.
 
 ## Session log
 
 | Date | Phase | What happened |
 |---|---|---|
 | 2026-08-16 | F0 | Phase map approved. License decided (AGPL-3.0 + DCO). Public repo created. |
+| 2026-08-16 | F1 | F0 closed. Self-interview conducted; 7 candidate pains recorded; tensions T1-T3 opened. |
