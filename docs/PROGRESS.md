@@ -55,12 +55,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 - ~~T1 — ICP contradiction.~~ **Resolved 2026-08-16** in
   [`docs/product/icp.md`](product/icp.md): the audience is experienced PKM users
   in decline, not non-technical beginners.
-- **T2 — Offline-first vs LLM.** Natural-language querying of one's own notes is
-  the hottest signal, but a local model is heavy and a remote API breaks
-  offline-first and note privacy. To be decided in F2/F4.
-- **T3 — Opinionated vs power-user needs.** Graph-wide editing and periodic notes
-  are normally answered with plugins or settings. Scope is closed (ADR 0002), so
-  each must be answered with a default or refused outright. To be decided in F3.
+- ~~T2 — Offline-first vs LLM.~~ **Resolved 2026-08-16** in
+  [`docs/product/hypotheses-and-risks.md`](product/hypotheses-and-risks.md):
+  fully functional offline; no note content leaves the device without an
+  explicit per-action decision. To become a formal ADR in F4.
+- **T3 — Opinionated vs power users.** Now hypothesis H1, the project's
+  make-or-break assumption. Experiment E1 must run before F3 opens.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
@@ -71,8 +71,7 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Next step
 
-F2.2 — hypotheses, risks and cheap experiments, resolving tensions T2 and T3.
-Output: `docs/product/hypotheses-and-risks.md`.
+F2.3 — success metrics. In parallel: run experiments E1, E2 and start E4.
 
 ## Session log
 
@@ -84,3 +83,4 @@ Output: `docs/product/hypotheses-and-risks.md`.
 | 2026-08-16 | F1 | F1.2b done. Empty quadrant identified (open source + local-first + low setup). Logseq OG entered maintenance-only mode — displaced users are the initial audience candidate. |
 | 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
 | 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
+| 2026-08-16 | F2 | F2.2 done. Five hypotheses and six risks recorded; T2 resolved by principle; T3 became hypothesis H1, to be tested before F3. |
