@@ -64,11 +64,15 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
+## Current phase
+
+**F1 — Discovery and problem framing.** F1.1 and F1.2 complete; next is F1.3
+(opportunity map), which closes the phase.
+
 ## Next step
 
-F1.2 — corroborate candidate pains P1-P7 against public evidence from Logseq and
-Obsidian users (forums, issue trackers, reviews). Output:
-`docs/discovery/secondary-research.md`.
+F1.3 — synthesise the opportunity map from the self-interview and the secondary
+research. Output: `docs/discovery/opportunity-map.md`. Gate for F1.
 
 ## Session log
 
@@ -76,3 +80,4 @@ Obsidian users (forums, issue trackers, reviews). Output:
 |---|---|---|
 | 2026-08-16 | F0 | Phase map approved. License decided (AGPL-3.0 + DCO). Public repo created. |
 | 2026-08-16 | F1 | F0 closed. Self-interview conducted; 7 candidate pains recorded; tensions T1-T3 opened. |
+| 2026-08-16 | F1 | F1.2 done. P1/P2 strongly corroborated externally; P3 real but crowded; P4/P5/P7 dropped from MVP consideration. |
