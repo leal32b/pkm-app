@@ -59,12 +59,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
   [`docs/product/hypotheses-and-risks.md`](product/hypotheses-and-risks.md):
   fully functional offline; no note content leaves the device without an
   explicit per-action decision. To become a formal ADR in F4.
-- **H1 — will configuration-fluent users accept losing configuration?** The
-  project's make-or-break assumption. Experiment E1 (public position post) was
-  designed but **cannot be run by the maintainer**. Still untested; an
-  alternative test must be designed before F5 commits significant build effort.
-- **H3 — is "start clean" acceptable?** Weakened by market research: importers
-  are reported to lower the cost of trying a new tool. Revisit in F3.
+- **H1 — will configuration-fluent users accept losing configuration?** Tested
+  indirectly via E1-alt (passive listening) and **weakened**: the audience
+  solves this pain with self-discipline inside flexible tools, and does not ask
+  for imposed constraints. Now an explicit bet, not a premise.
+- **H3 — is "start clean" acceptable?** **Probably wrong.** Opposed by market
+  research and by E1-alt. Must be reversed or hedged in F3.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
@@ -89,3 +89,4 @@ F2.3 — success metrics. In parallel: run experiments E1, E2 and start E4.
 | 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
 | 2026-08-16 | F2 | F2.2 done. Five hypotheses and six risks recorded; T2 resolved by principle; T3 became hypothesis H1, to be tested before F3. |
 | 2026-08-16 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
+| 2026-08-16 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |

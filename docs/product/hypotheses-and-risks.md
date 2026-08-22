@@ -109,6 +109,7 @@ constraint rather than a product principle.
 | R4 | Contributors arrive wanting the settings the product refuses | medium | refusals stated publicly in README and CLAUDE.md from day one |
 | R5 | macOS notarization cost/bureaucracy discovered late | medium | Apple Developer account acquired during F4, not F6 |
 | R6 | Scope grows past what one person can maintain | high | every new feature must be defensible as a default (vision, refusal 3) |
+| R7 | Target audience responds to friction by building their own tool or wiring an LLM to the notes folder, rather than adopting someone else's product | high | the product must be better than a weekend hack, not just better than Obsidian |
 
 ## What must happen before F3
 
