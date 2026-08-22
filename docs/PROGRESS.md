@@ -59,8 +59,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
   [`docs/product/hypotheses-and-risks.md`](product/hypotheses-and-risks.md):
   fully functional offline; no note content leaves the device without an
   explicit per-action decision. To become a formal ADR in F4.
-- **T3 — Opinionated vs power users.** Now hypothesis H1, the project's
-  make-or-break assumption. Experiment E1 must run before F3 opens.
+- **H1 — will configuration-fluent users accept losing configuration?** The
+  project's make-or-break assumption. Experiment E1 (public position post) was
+  designed but **cannot be run by the maintainer**. Still untested; an
+  alternative test must be designed before F5 commits significant build effort.
+- **H3 — is "start clean" acceptable?** Weakened by market research: importers
+  are reported to lower the cost of trying a new tool. Revisit in F3.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
@@ -84,3 +88,4 @@ F2.3 — success metrics. In parallel: run experiments E1, E2 and start E4.
 | 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
 | 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
 | 2026-08-16 | F2 | F2.2 done. Five hypotheses and six risks recorded; T2 resolved by principle; T3 became hypothesis H1, to be tested before F3. |
+| 2026-08-16 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
