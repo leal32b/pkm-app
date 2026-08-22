@@ -52,27 +52,30 @@ Carried from F0:
   distributing outside the App Store. Not yet acquired. Blocking for F6.
 
 Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-interview.md)):
-- **T1 — ICP contradiction.** The evidenced pains belong to an experienced PKM
-  power user, not to the "non-technical people" audience assumed at project
-  start. These are two different products. To be decided in F2. `[ASSUMPTION]`
-- **T2 — Offline-first vs LLM.** Natural-language querying of one's own notes is
-  the hottest signal, but a local model is heavy and a remote API breaks
-  offline-first and note privacy. To be decided in F2/F4.
-- **T3 — Opinionated vs power-user needs.** Graph-wide editing and periodic notes
-  are normally answered with plugins or settings. Scope is closed (ADR 0002), so
-  each must be answered with a default or refused outright. To be decided in F3.
+- ~~T1 — ICP contradiction.~~ **Resolved 2026-08-16** in
+  [`docs/product/icp.md`](product/icp.md): the audience is experienced PKM users
+  in decline, not non-technical beginners.
+- ~~T2 — Offline-first vs LLM.~~ **Resolved 2026-08-16** in
+  [`docs/product/hypotheses-and-risks.md`](product/hypotheses-and-risks.md):
+  fully functional offline; no note content leaves the device without an
+  explicit per-action decision. To become a formal ADR in F4.
+- **H1 — will configuration-fluent users accept losing configuration?** Tested
+  indirectly via E1-alt (passive listening) and **weakened**: the audience
+  solves this pain with self-discipline inside flexible tools, and does not ask
+  for imposed constraints. Now an explicit bet, not a premise.
+- **H3 — is "start clean" acceptable?** **Probably wrong.** Opposed by market
+  research and by E1-alt. Must be reversed or hedged in F3.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
 ## Current phase
 
-**F2 — Product strategy.** F1 closed 2026-08-16; see
-[`docs/discovery/opportunity-map.md`](discovery/opportunity-map.md).
+**F2 — Product strategy.** Vision rewritten (v0.2) after H1 was weakened;
+remaining step is F2.3 (success metrics), which closes the phase.
 
 ## Next step
 
-F2.1 — write the product vision and formalise the ICP, resolving tension T1.
-Output: `docs/product/vision.md`.
+F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
 
 ## Session log
 
@@ -83,3 +86,8 @@ Output: `docs/product/vision.md`.
 | 2026-08-16 | F1 | F1.2 done. P1/P2 strongly corroborated externally; P3 real but crowded; P4/P5/P7 dropped from MVP consideration. |
 | 2026-08-16 | F1 | F1.2b done. Empty quadrant identified (open source + local-first + low setup). Logseq OG entered maintenance-only mode — displaced users are the initial audience candidate. |
 | 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
+| 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
+| 2026-08-16 | F2 | F2.2 done. Five hypotheses and six risks recorded; T2 resolved by principle; T3 became hypothesis H1, to be tested before F3. |
+| 2026-08-22 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
+| 2026-08-22 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |
+| 2026-08-22 | F2 | Vision rewritten (v0.2): thesis moved from "no configuration" to "the destination". Six design principles adopted from template archaeology. Four-pillar vision recorded; MVP locked to pillar 1 (work journal). Tiered modes explicitly rejected. |
