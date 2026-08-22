@@ -33,6 +33,7 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 |---|---|---|
 | [0001](adr/0001-record-architecture-decisions.md) | Record all decisions as ADRs | 2026-08-16 |
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
+| [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -63,8 +64,10 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
   indirectly via E1-alt (passive listening) and **weakened**: the audience
   solves this pain with self-discipline inside flexible tools, and does not ask
   for imposed constraints. Now an explicit bet, not a premise.
-- **H3 — is "start clean" acceptable?** **Probably wrong.** Opposed by market
-  research and by E1-alt. Must be reversed or hedged in F3.
+- ~~H3 — is "start clean" acceptable?~~ **Decided 2026-08-22** in ADR 0003:
+  start clean, **against the available evidence**, as a deliberate bet. Archive
+  (read-only access to the old vault) is the first response if a revision
+  trigger fires.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
@@ -74,8 +77,7 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Next step
 
-F3.2 — revisit H3 ("start clean") and define the main flow, as the brief for
-the prototype.
+F3.3 — prototype the journal screen and the check-out audit, in Claude Design.
 
 ## Session log
 
@@ -94,3 +96,4 @@ the prototype.
 | 2026-08-22 | F2 | F2.3 done, F2 gate met. Success metrics defined around retention and finished days; anti-metrics recorded. Artifact dates corrected. |
 | 2026-08-22 | F3 | F3.1 done. Taxonomy fixed: three axes, seven concepts (was nine in one flat list). `risco` and `aprendi` absorbed; priority demoted to attributes; `question` added with a kill criterion. UI language set to English, i18n deferred. |
 | 2026-08-22 | F3 | F3.1 done. Taxonomy locked: three axes, seven concepts. `risco` and `aprendi` absorbed; priority demoted to attributes; free-form tags cut in favour of notes; `question` added with a kill criterion. Person syntax `@[[ ]]`. Revision trigger documented. |
+| 2026-08-22 | F3 | F3.2 done. ADR 0003: start clean, no import — decided against the evidence, with revision triggers. Main flow defined in five moments; Moment 4 (collect) in MVP as minimal, first to cut. |
