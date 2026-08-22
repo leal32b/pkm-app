@@ -54,18 +54,25 @@ runs short** in F3.5.
 
 ## Moment 5 — Close (end of day)
 
-The check-out audit. Four verifications, not questions:
+The check-out audit. Four verifications of the day's own fields:
 
 1. Focus completed?
 2. Intention reached?
-3. Do log items have an owner and a state?
-4. Everything captured?
+3. **Incomplete tasks** — tasks with no state, and `waiting` tasks with no
+   person. Fixable in place; **each item disappears as it is resolved.**
+4. Everything captured? — a question, answered in the log.
 
-These verify the day's own fields. **They are never reflective prompts** —
-no "what did you learn today", no "who needs attention" (refusal 2; cut C3).
+> **Scope of check 3 is deliberately narrow: it lists only blocks that are
+> already tasks and are incomplete.** It must never ask the user to classify
+> unmarked blocks. Most of the day is plain text written unmarked on purpose;
+> demanding classification at day's end is aspirational capture in a new costume
+> (refusal 2) and is precisely what the maintainer cut from his own template (C3).
 
-> **Not optional.** The audit is the instrument behind the "days finished ≥ 80%"
-> metric (`success-metrics.md`). Without it the MVP cannot be evaluated.
+A day with nothing pending shows check 3 empty and closes in silence. The
+check-out is a list that empties, not a form to fill.
+
+**Not optional.** The audit is the instrument behind the "days finished ≥ 80%"
+metric (`success-metrics.md`).
 
 ## What this flow does not contain
 
