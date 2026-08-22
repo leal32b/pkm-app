@@ -74,7 +74,8 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Next step
 
-F3.2 — revisit H3 ("start clean") and define the main flow, before prototyping.
+F3.2 — revisit H3 ("start clean") and define the main flow, as the brief for
+the prototype.
 
 ## Session log
 
@@ -92,3 +93,4 @@ F3.2 — revisit H3 ("start clean") and define the main flow, before prototyping
 | 2026-08-22 | F2 | Vision rewritten (v0.2): thesis moved from "no configuration" to "the destination". Six design principles adopted from template archaeology. Four-pillar vision recorded; MVP locked to pillar 1 (work journal). Tiered modes explicitly rejected. |
 | 2026-08-22 | F2 | F2.3 done, F2 gate met. Success metrics defined around retention and finished days; anti-metrics recorded. Artifact dates corrected. |
 | 2026-08-22 | F3 | F3.1 done. Taxonomy fixed: three axes, seven concepts (was nine in one flat list). `risco` and `aprendi` absorbed; priority demoted to attributes; `question` added with a kill criterion. UI language set to English, i18n deferred. |
+| 2026-08-22 | F3 | F3.1 done. Taxonomy locked: three axes, seven concepts. `risco` and `aprendi` absorbed; priority demoted to attributes; free-form tags cut in favour of notes; `question` added with a kill criterion. Person syntax `@[[ ]]`. Revision trigger documented. |
