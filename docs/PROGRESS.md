@@ -70,12 +70,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Current phase
 
-**F2 — Product strategy.** F1 closed 2026-08-16; see
-[`docs/discovery/opportunity-map.md`](discovery/opportunity-map.md).
+**F2 — Product strategy.** Vision rewritten (v0.2) after H1 was weakened;
+remaining step is F2.3 (success metrics), which closes the phase.
 
 ## Next step
 
-F2.3 — success metrics. In parallel: run experiments E1, E2 and start E4.
+F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
 
 ## Session log
 
@@ -88,5 +88,6 @@ F2.3 — success metrics. In parallel: run experiments E1, E2 and start E4.
 | 2026-08-16 | F1 | F1.3 done. Opportunity map written; O1+O2 prioritised as the thesis, O3 held as an explicit bet. F1 gate met. |
 | 2026-08-16 | F2 | F2.1 done. Vision and ICP drafted; T1 resolved. Three product refusals defined. O2.2 chosen as the first problem, constraining F3 to "capture less" and/or "resurface automatically". |
 | 2026-08-16 | F2 | F2.2 done. Five hypotheses and six risks recorded; T2 resolved by principle; T3 became hypothesis H1, to be tested before F3. |
-| 2026-08-16 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
-| 2026-08-16 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |
+| 2026-08-22 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
+| 2026-08-22 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |
+| 2026-08-22 | F2 | Vision rewritten (v0.2): thesis moved from "no configuration" to "the destination". Six design principles adopted from template archaeology. Four-pillar vision recorded; MVP locked to pillar 1 (work journal). Tiered modes explicitly rejected. |
