@@ -162,6 +162,43 @@ mode documented in `market-pain-research.md` (N1).
   day's stream is just writing. Per P-C, views show only what was marked;
   unmarked content is never surfaced automatically.
 
+## Visual channels
+
+The three axes are independent, so they need independent channels. Collapsing
+them into one lane makes a block unable to be, say, both a `blocker` and a task
+— which the prototype in F3.3 exposed.
+
+| Axis | Channel |
+|---|---|
+| 1 — Note type | left gutter, outside the text column |
+| 2 — Task state | a glyph at the start of the text itself |
+| 3 — Person | inline in the sentence |
+
+A block therefore shows its type and its task state at once, without competing
+for the same slot.
+
+### Person placement
+When a block is `waiting`, the person follows the state glyph directly:
+`◷ @Marina — rollback plan before we retry`. Elsewhere, a person may appear
+anywhere in the sentence.
+
+### Enforcing the `waiting` constraint
+Choosing `waiting` opens the person picker immediately. Dismissing the picker
+leaves the block as `todo`. **There is no error message and no invalid state** —
+the constraint is satisfied by the flow, not by validation.
+
+### Timestamps
+Every block records the time it was written. The time is **always displayed**,
+quietly, in the gutter between the type mark and the text.
+
+It is **editable** — a block written at 14:00 about a 09:00 conversation should
+carry 09:00. It is **not removable**: a missing time breaks the column, and
+per-block visibility would be a configuration decision.
+
+Whether to display the time is not a user setting. Offering hidden / visible /
+on-hover would be a settings screen in disguise (refusal 1). The app decides:
+always visible.
+
 ## Open for F3.3 (prototype)
 
 Interface questions, deliberately not decided here:
