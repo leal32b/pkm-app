@@ -189,10 +189,10 @@ Blocks nest **exactly one level deep**. A block may have children; a child may
 not. A parent is usually context (a meeting, a topic), and its children are what
 came out of it.
 
-14:00 1:1 with @Rafael
-☐ TODO wants more scope on [[Platform team]] roadmap work
-decision going with expand-and-contract
-☐ TODO write the runbook · important
+14:00     1:1 with @Rafael
+            ☐ TODO wants more scope on [[Platform team]] roadmap work
+10:20     decision · going with expand-and-contract
+            ☐ TODO write the runbook for the cutover · important
 
 A child may carry a type, a task state and people. It does **not** carry its own
 timestamp: the parent is the moment, and the children belong to it. This keeps
@@ -218,21 +218,53 @@ rather than an ability.
 
 The three axes are independent, so they need independent channels. Collapsing
 them into one lane makes a block unable to be, say, both a `blocker` and a task
-— which the prototype in F3.3 exposed.
+— which the F3.3 prototype exposed.
 
 | Axis | Channel |
 |---|---|
 | 1 — Note type | left gutter, outside the text column |
-| 2 — Task state | a glyph at the start of the text itself |
+| 2 — Task state | icon plus word at the start of the text |
 | 3 — Person | inline in the sentence |
 
 A block therefore shows its type and its task state at once, without competing
 for the same slot.
 
+Timestamps sit in the gutter between the type mark and the text (top-level
+blocks only — see Hierarchy). Priority renders as a text suffix after the
+sentence.
+
+### Task state rendering
+
+| State | Icon (Tabler) | Word |
+|---|---|---|
+| `todo` | `ti-square-rounded` | `todo` |
+| `waiting` | `ti-square-rounded` | `waiting`, followed by the person |
+| `done` | `ti-square-rounded-check` | `done` |
+
+**The icon says it is a task and whether it is finished; the word says the
+state.** `todo` and `waiting` share the empty box because both are open. A third
+similar icon would force decoding instead of recognition (symbol rule).
+
+Icons render at 18-20px, larger than the surrounding body text, so the task
+column scans at a glance. Words are lowercase — the product is quiet.
+
+09:40 blocker ☐ todo Staging deploys failing on the migration
+09:44 ☐ waiting @Marina — rollback plan before we retry
+11:05 ☐ todo Write the runbook · important
+16:40 ☑ done Reviewed the RFC
+
+
+### No derived durations in the journal
+
+A `waiting` block shows no elapsed time. In the day it was captured, the elapsed
+time is always zero — the wait starts there. Duration is meaningful only in an
+aggregate task view across days, which is out of scope for the MVP and belongs
+to F7.
+
 ### Person placement
-When a block is `waiting`, the person follows the state glyph directly:
-`◷ @Marina — rollback plan before we retry`. Elsewhere, a person may appear
-anywhere in the sentence.
+When a block is `waiting`, the person follows the word directly:
+`☐ waiting @Marina — rollback plan`. Elsewhere, a person may appear anywhere in
+the sentence.
 
 ### Enforcing the `waiting` constraint
 Choosing `waiting` opens the person picker immediately. Dismissing the picker
@@ -240,8 +272,9 @@ leaves the block as `todo`. **There is no error message and no invalid state** �
 the constraint is satisfied by the flow, not by validation.
 
 ### Timestamps
-Every block records the time it was written. The time is **always displayed**,
-quietly, in the gutter between the type mark and the text.
+Every top-level block records the time of its **first keystroke**, not of its
+creation. An empty block shows no time. The time is **always displayed**,
+quietly, in the gutter.
 
 It is **editable** — a block written at 14:00 about a 09:00 conversation should
 carry 09:00. It is **not removable**: a missing time breaks the column, and

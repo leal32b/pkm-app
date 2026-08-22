@@ -26,11 +26,20 @@ reachable in one action and is never forced.
 
 ## Moment 2 — Declare intent
 
-Up to **three** focus slots and **one** intention. No ranking, no priority
-labels, no links required. Skippable — a skipped intent is not an error and
-produces no nagging.
+**Focus: one to three references to tasks.** Focus does not hold free text of
+its own — it points at real tasks. A task may come from any day; carrying
+yesterday's task into today's focus is the normal case.
 
-The cap is the opinion (P-D). Three is a limit, not a target.
+Typing new text into a focus slot **creates that task in today's log** and
+references it. The task lives in the log, which remains the only place to write
+(P-A). Marking it done anywhere marks it done everywhere, because there is one
+object.
+
+**Intention: one open line of free text.** Deliberately not a task and not
+linked to anything — it is a stance for the day, not an item of work.
+
+Both are skippable. A skipped intent is not an error and produces no nagging.
+The cap of three is the opinion (P-D): a limit, not a target.
 
 ## Moment 3 — Write (all day)
 
@@ -56,7 +65,9 @@ runs short** in F3.5.
 
 The check-out audit. Four verifications of the day's own fields:
 
-1. Focus completed?
+1. **Focus** — derived, not asked. The linked tasks show their own state; if
+   they are done, the check is met. The app never asks a question it can answer
+   from what the user already marked (P-C).
 2. Intention reached?
 3. **Incomplete tasks** — tasks with no state, and `waiting` tasks with no
    person. Fixable in place; **each item disappears as it is resolved.**
