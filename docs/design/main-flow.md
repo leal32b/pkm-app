@@ -72,10 +72,25 @@ no "what did you learn today", no "who needs attention" (refusal 2; cut C3).
 No folder choice, no template selection, no save location, no reflective
 prompts, no wizard, no settings screen for structure, no import.
 
-## Open for the prototype (F3.3)
+## Resolved by the prototype (F3.3)
 
-- How a type is applied mid-sentence without breaking flow.
-- Whether types are visible in the stream or only in Moment 4.
-- What the unfinished-day indicator looks like without becoming a nag.
-- How the audit renders — inline in the journal, or as a distinct surface.
-- Whether Moment 2 lives at the top of the day's stream or is separate.
+- **Type and task state occupy distinct visual channels** — see
+  `taxonomy.md`, "Visual channels".
+- **Marks live outside the sentence.** A marked block's text is byte-identical
+  to a plain one's.
+- **Check-out is appended to Today, not a separate screen.** The day's fields
+  cannot be verified from somewhere the fields are not.
+- **Timestamps: recorded always, displayed always, editable, not removable.**
+- **No persistent shortcut cheatsheet.** A permanent cheatsheet is an admission
+  that the interaction is not discoverable. Shortcuts surface while marking and
+  never sit still on the screen.
+- **No explanatory copy inside the UI.** A section that needs a caption is a
+  section that is badly designed.
+- **The fourth check ("everything captured?") is a question, not a field.** It
+  returns the cursor to the activity log. A text box there would create a second
+  place to write, breaking P-A.
+
+## Still open
+
+- Visual weight of the check-out section relative to the day above it.
+- How an edited timestamp is entered without opening a dialog.
