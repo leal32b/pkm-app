@@ -183,6 +183,37 @@ mode documented in `market-pain-research.md` (N1).
   day's stream is just writing. Per P-C, views show only what was marked;
   unmarked content is never surfaced automatically.
 
+## Hierarchy
+
+Blocks nest **exactly one level deep**. A block may have children; a child may
+not. A parent is usually context (a meeting, a topic), and its children are what
+came out of it.
+
+14:00 1:1 with @Rafael
+☐ TODO wants more scope on [[Platform team]] roadmap work
+decision going with expand-and-contract
+☐ TODO write the runbook · important
+
+A child may carry a type, a task state and people. It does **not** carry its own
+timestamp: the parent is the moment, and the children belong to it. This keeps
+the time column readable as the shape of the day rather than a stamp on every
+line.
+
+Derived durations on a child (`waiting 3 days`) are computed from the **parent's**
+timestamp, which is also the more accurate answer — the wait began at the
+conversation, not at the moment the line was typed.
+
+**Why one level rather than none or many.** A flat stream forces context to be
+repeated in every line, which does not match real use. Unlimited nesting — the
+Logseq and Roam model — reintroduces "where does this go?" at every level,
+which is the decision this product exists to remove. One level covers the real
+case (context → items) and makes depth a binary rather than a judgement: a
+block is a child or it is not. There is never a decision about how deep.
+
+**Accepted cost:** users coming from an outliner will hit the limit. This is the
+same class of constraint as `waiting` requiring a person — it removes a question
+rather than an ability.
+
 ## Visual channels
 
 The three axes are independent, so they need independent channels. Collapsing
