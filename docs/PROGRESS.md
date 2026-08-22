@@ -20,8 +20,8 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 |---|---|---|
 | F0 | Repo and process foundation | **done** (2026-08-16) |
 | F1 | Discovery and problem framing | **done** (2026-08-16) |
-| F2 | Product strategy | in progress |
-| F3 | Solution design | not started |
+| F2 | Product strategy | **done** (2026-08-22) |
+| F3 | Solution design | in progress |
 | F4 | Architecture | not started |
 | F5 | MVP construction | not started |
 | F6 | Distribution and launch | not started |
@@ -70,12 +70,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Current phase
 
-**F2 — Product strategy.** Vision rewritten (v0.2) after H1 was weakened;
-remaining step is F2.3 (success metrics), which closes the phase.
+**F3 — Solution design.** F2 closed 2026-08-22.
 
 ## Next step
 
-F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
+F3.1 — reconcile the three tag vocabularies into the product's single
+taxonomy. This is where the opinion becomes concrete.
 
 ## Session log
 
@@ -91,3 +91,4 @@ F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
 | 2026-08-22 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
 | 2026-08-22 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |
 | 2026-08-22 | F2 | Vision rewritten (v0.2): thesis moved from "no configuration" to "the destination". Six design principles adopted from template archaeology. Four-pillar vision recorded; MVP locked to pillar 1 (work journal). Tiered modes explicitly rejected. |
+| 2026-08-22 | F2 | F2.3 done, F2 gate met. Success metrics defined around retention and finished days; anti-metrics recorded. Artifact dates corrected. |
