@@ -55,28 +55,49 @@ note with a special role, and accumulates a view of everything referencing them.
 
 ### Priority — attributes, not taxonomy
 
-`important` and `urgent` are boolean attributes of a task, not marks. They
-answer "what do I do now", not "what is this". Keeping them out of Axis 1 is
-what stops the vocabulary from re-inflating.
+`important` and `urgent` are boolean attributes of a task. Both exist; they are
+not merged. They render as a **text suffix** at the end of the block, never
+inside the sentence:
 
-The single view of all captured tasks — the practice that survived two tool
-migrations — remains possible; it becomes a property of the view, not of the
-vocabulary.
+`☐ Write the runbook for the cutover · important`
 
-## What was cut, and why
+The suffix doubles as the edit affordance — a priority that cannot be changed
+without opening a menu is a priority nobody maintains.
 
-Traceability matters more than the list: these cuts *are* the opinion.
+**Suffixes work only while they are rare.** One suffix is a tail; four are a
+train. That is the reason the budget below is closed.
 
-| Cut | Absorbed by | Reason |
+## Symbol budget
+
+| Channel | Contents | Rule |
 |---|---|---|
-| `risco` | `blocker` | A blocker is a realised risk. Same object, two states — not two objects. Unrealised risks are rarely reopened and become noise. |
-| `aprendi` | `insight` | The distinction was origin (external vs. internal). Hesitation at marking time violates P-B: marking must be instant. |
-| `pessoa` as a tag | Axis 3 | An entity, not a classification. |
-| `importante` / `urgente` as tags | attributes | Prioritisation, not classification. |
-| **free-form tags (`#`)** | `[[ ]]` notes | See below. |
+| Gutter | four note types | one per block, exclusive |
+| Glyphs | `☐` todo · `◷` waiting · `☑` done | **three, closed** — exclusive states only |
+| Suffix | `important`, `urgent` | optional attributes, text not symbols |
+| Inline | `@[[person]]`, `[[note]]` | closed (see Reference syntax) |
 
-Nine concepts became seven, across three axes that never compete for the same
-decision.
+**Glyphs are for exclusive states. Text is for optional attributes.** Adding
+optional, combinable symbols turns recognition into decoding — the criticism
+recorded against Tana in `market-pain-research.md`, and incompatible with a
+product that promises value on day one.
+
+## Deliberately excluded: due dates and scheduling
+
+Neither exists in the MVP.
+
+**Due dates** were considered because `waiting on @someone` with no sense of
+time is hard to act on. That need is met by derivation instead of input: every
+block already records when it was written, so elapsed time is computed, not
+typed — `◷ @Marina — rollback plan    waiting 3 days`. No new field, no new
+concept, no new decision for the user (P-C).
+
+**Scheduling** is telling a future self what to do — the aspirational capture
+refusal 2 forbids, and something the maintainer cut from his own template
+(archaeology, C3). A journal with scheduling is a task manager, and that is a
+crowded quadrant this product did not choose.
+
+Both fall under the revision trigger above: if real use shows the need, it
+becomes an ADR, not a quiet addition.
 
 ### Why there are no free-form tags
 
