@@ -214,6 +214,9 @@ block is a child or it is not. There is never a decision about how deep.
 same class of constraint as `waiting` requiring a person — it removes a question
 rather than an ability.
 
+Children are marked with a bullet and are indented one step. A child's type mark
+aligns to the child's own line in the gutter.
+
 ## Visual channels
 
 The three axes are independent, so they need independent channels. Collapsing
@@ -223,7 +226,7 @@ them into one lane makes a block unable to be, say, both a `blocker` and a task
 | Axis | Channel |
 |---|---|
 | 1 — Note type | left gutter, outside the text column |
-| 2 — Task state | icon plus word at the start of the text |
+| 2 — Task state | inline at the head of the text |
 | 3 — Person | inline in the sentence |
 
 A block therefore shows its type and its task state at once, without competing
@@ -235,23 +238,25 @@ sentence.
 
 ### Task state rendering
 
+State is **part of the text**, not a column: it sits inline at the head of the
+line and takes only the width it needs. Marked and unmarked lines share the same
+left text edge.
+
 | State | Icon (Tabler) | Word |
 |---|---|---|
-| `todo` | `ti-square-rounded` | `todo` |
-| `waiting` | `ti-square-rounded` | `waiting`, followed by the person |
-| `done` | `ti-square-rounded-check` | `done` |
+| `todo` | `ti-square-rounded` | `TODO` |
+| `waiting` | `ti-square-rounded` | `WAITING`, followed by the person when known |
+| `done` | `ti-square-rounded-check` | `DONE` |
 
-**The icon says it is a task and whether it is finished; the word says the
-state.** `todo` and `waiting` share the empty box because both are open. A third
-similar icon would force decoding instead of recognition (symbol rule).
+The icon says it is a task and whether it is finished; the word says the state.
+`todo` and `waiting` share the empty box because both are open.
 
-Icons render at 18-20px, larger than the surrounding body text, so the task
-column scans at a glance. Words are lowercase — the product is quiet.
+Words render in small caps at body size — never larger. **Type is metadata and
+lives in the gutter; state is content and lives in the sentence.** They are
+different kinds of thing and must not share a channel.
 
-09:40 blocker ☐ todo Staging deploys failing on the migration
-09:44 ☐ waiting @Marina — rollback plan before we retry
-11:05 ☐ todo Write the runbook · important
-16:40 ☑ done Reviewed the RFC
+No chip, no border, no category colour. A day heavy with tasks must not read as
+a wall of labels.
 
 
 ### No derived durations in the journal
@@ -266,10 +271,18 @@ When a block is `waiting`, the person follows the word directly:
 `☐ waiting @Marina — rollback plan`. Elsewhere, a person may appear anywhere in
 the sentence.
 
-### Enforcing the `waiting` constraint
-Choosing `waiting` opens the person picker immediately. Dismissing the picker
-leaves the block as `todo`. **There is no error message and no invalid state** —
-the constraint is satisfied by the flow, not by validation.
+### The `waiting` constraint is enforced at close, not at capture
+
+Choosing `waiting` opens the person picker. **Dismissing it is allowed**: the
+block stays `waiting` with no person, which is a valid temporary state.
+
+This is deliberate. Requiring the name mid-sentence is the form that P-B forbids
+— marking must be instant, and the name is often not to hand. The check-out
+closes these at the end of the day, which is exactly what the maintainer's own
+template already did ("Activity Log: status e responsáveis adicionados?").
+
+A `waiting` block with no person is the primary thing check 3 of the check-out
+lists. Without this state, that check would have nothing legitimate to ask for.
 
 ### Timestamps
 Every top-level block records the time of its **first keystroke**, not of its
