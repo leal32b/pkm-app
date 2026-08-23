@@ -85,6 +85,19 @@ check-out is a list that empties, not a form to fill.
 **Not optional.** The audit is the instrument behind the "days finished ≥ 80%"
 metric (`success-metrics.md`).
 
+## Section framing
+
+The day is bracketed by two titled rules: **Check-in** above and **Check-out**
+below, each centred on its divider. The activity log lives between them.
+
+Both sections collapse. **Collapsed state applies to the current day only and is
+never remembered** — a persisted collapse would be a preference, which is
+configuration through the back door (refusal 1).
+
+Section labels (`focus`, `intention`, `incomplete`, `captured`) are small
+subtitles above their content, not gutter marks. **The gutter carries type marks
+and timestamps, and nothing else.**
+
 ## What this flow does not contain
 
 No folder choice, no template selection, no save location, no reflective
