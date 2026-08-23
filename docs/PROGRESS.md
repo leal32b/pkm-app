@@ -20,8 +20,8 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 |---|---|---|
 | F0 | Repo and process foundation | **done** (2026-08-16) |
 | F1 | Discovery and problem framing | **done** (2026-08-16) |
-| F2 | Product strategy | in progress |
-| F3 | Solution design | not started |
+| F2 | Product strategy | **done** (2026-08-22) |
+| F3 | Solution design | in progress |
 | F4 | Architecture | not started |
 | F5 | MVP construction | not started |
 | F6 | Distribution and launch | not started |
@@ -33,6 +33,7 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 |---|---|---|
 | [0001](adr/0001-record-architecture-decisions.md) | Record all decisions as ADRs | 2026-08-16 |
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
+| [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -63,19 +64,21 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
   indirectly via E1-alt (passive listening) and **weakened**: the audience
   solves this pain with self-discipline inside flexible tools, and does not ask
   for imposed constraints. Now an explicit bet, not a premise.
-- **H3 — is "start clean" acceptable?** **Probably wrong.** Opposed by market
-  research and by E1-alt. Must be reversed or hedged in F3.
+- ~~H3 — is "start clean" acceptable?~~ **Decided 2026-08-22** in ADR 0003:
+  start clean, **against the available evidence**, as a deliberate bet. Archive
+  (read-only access to the old vault) is the first response if a revision
+  trigger fires.
 - Discovery method: no guaranteed access to interviewees, so F1 relies on
   secondary research (forums, issue trackers, reviews) plus the self-interview.
 
 ## Current phase
 
-**F2 — Product strategy.** Vision rewritten (v0.2) after H1 was weakened;
-remaining step is F2.3 (success metrics), which closes the phase.
+**F3 — Solution design.** F3.1 to F3.3 complete. Next: F3.4 (OS conventions and
+support matrix).
 
 ## Next step
 
-F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
+F3.5 — MVP spec with a fixed appetite. Closes F3.
 
 ## Session log
 
@@ -91,3 +94,11 @@ F2.3 — success metrics. Output: `docs/product/success-metrics.md`. Closes F2.
 | 2026-08-22 | F1 | Market pain research incorporated (F1.2c). O4 upgraded to strong evidence — performance is a competitive position, not a preference. Three strategy conflicts recorded (sync, mobile, import). E1 cancelled; H1 remains untested. |
 | 2026-08-22 | F2 | E1-alt run (passive listening, HN thread n=348 comments). H1 weakened — pain confirmed, solution shape not. H3 probably wrong. O2.2 re-scoped to aspirational capture. R7 added. |
 | 2026-08-22 | F2 | Vision rewritten (v0.2): thesis moved from "no configuration" to "the destination". Six design principles adopted from template archaeology. Four-pillar vision recorded; MVP locked to pillar 1 (work journal). Tiered modes explicitly rejected. |
+| 2026-08-22 | F2 | F2.3 done, F2 gate met. Success metrics defined around retention and finished days; anti-metrics recorded. Artifact dates corrected. |
+| 2026-08-22 | F3 | F3.1 done. Taxonomy fixed: three axes, seven concepts (was nine in one flat list). `risco` and `aprendi` absorbed; priority demoted to attributes; `question` added with a kill criterion. UI language set to English, i18n deferred. |
+| 2026-08-22 | F3 | F3.1 done. Taxonomy locked: three axes, seven concepts. `risco` and `aprendi` absorbed; priority demoted to attributes; free-form tags cut in favour of notes; `question` added with a kill criterion. Person syntax `@[[ ]]`. Revision trigger documented. |
+| 2026-08-22 | F3 | F3.2 done. ADR 0003: start clean, no import — decided against the evidence, with revision triggers. Main flow defined in five moments; Moment 4 (collect) in MVP as minimal, first to cut. |
+| 2026-08-22 | F3 | F3.3 prototyped in Claude Design. Prototype exposed a model flaw: type and task state had been collapsed into one channel, making a block unable to be both. Fixed in taxonomy — three axes, three channels. Timestamps decided. |
+| 2026-08-22 | F3 | Second prototype iteration. Two model gaps found and closed: hierarchy (one level, was undefined) and check-out scope (was demanding classification of unmarked blocks — refusal 2 violation). Timestamps now recorded on first keystroke. |
+| 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
+| 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
