@@ -34,6 +34,7 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 | [0001](adr/0001-record-architecture-decisions.md) | Record all decisions as ADRs | 2026-08-16 |
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
 | [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
+| [0004](adr/0004-tauri-and-solidjs.md) | Tauri v2 (2.11.x) + SolidJS, retroactive | 2026-08-22 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -47,29 +48,51 @@ Decided but not yet recorded as ADRs (pending, F4):
 
 ## Open questions
 
-Carried from F0:
-- Product name (deferred to F2/F3; `pkm-app` is a working title).
-- Apple Developer account (USD 99/year) is required for notarization even when
-  distributing outside the App Store. Not yet acquired. Blocking for F6.
+Live items only. Settled decisions move to the log below.
 
-Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-interview.md)):
-- ~~T1 — ICP contradiction.~~ **Resolved 2026-08-16** in
-  [`docs/product/icp.md`](product/icp.md): the audience is experienced PKM users
-  in decline, not non-technical beginners.
-- ~~T2 — Offline-first vs LLM.~~ **Resolved 2026-08-16** in
-  [`docs/product/hypotheses-and-risks.md`](product/hypotheses-and-risks.md):
-  fully functional offline; no note content leaves the device without an
-  explicit per-action decision. To become a formal ADR in F4.
-- **H1 — will configuration-fluent users accept losing configuration?** Tested
-  indirectly via E1-alt (passive listening) and **weakened**: the audience
-  solves this pain with self-discipline inside flexible tools, and does not ask
-  for imposed constraints. Now an explicit bet, not a premise.
-- ~~H3 — is "start clean" acceptable?~~ **Decided 2026-08-22** in ADR 0003:
-  start clean, **against the available evidence**, as a deliberate bet. Archive
-  (read-only access to the old vault) is the first response if a revision
-  trigger fires.
-- Discovery method: no guaranteed access to interviewees, so F1 relies on
-  secondary research (forums, issue trackers, reviews) plus the self-interview.
+**Product**
+- Product name. `pkm-app` is a working title; naming was deferred out of F2/F3.
+- **H1 — will configuration-fluent users accept losing configuration?**
+  The project's make-or-break assumption. E1 (public position post) could not be
+  run; E1-alt (passive listening) **weakened** it — the audience solves this pain
+  with self-discipline inside flexible tools and does not ask for imposed
+  constraints. Now an explicit bet, not a premise.
+- **`question` kill criterion.** If the type is not used at least weekly during
+  the first two months of real use, it is removed from the product, not
+  documented as underused (`taxonomy.md`).
+- **Vocabulary revision trigger.** Recurring requests for a fifth concept become
+  an ADR: either it ships as a new default, or the vocabulary opens. The decision
+  must be explicit, never accidental (`taxonomy.md`).
+- **ADR 0003 watch.** Whether the maintainer misses his Logseq history during the
+  MVP. Archive (read-only access to the old vault) is the first response if so.
+
+**Technical**
+- **H5 — is Rust workable at this pace?** Reframed in ADR 0004: most Rust will be
+  agent-written, so the real question is whether the maintainer can *review* it.
+  Untested; the walking skeleton (F5) is the test.
+- **Offline-first as an architectural constraint.** Adopted as a product
+  principle in F2.2; still needs a formal ADR in F4.
+- **Windows and Linux are compiled but never launched.** No machine available, so
+  webview rendering there is unverified by construction. Declared best-effort
+  (`platform-support.md`); closes only via an early user, a cheap machine, or
+  screenshot tests in CI.
+
+**Blocking F6**
+- **Apple Developer account (USD 99/year)** for signing and notarisation. Not
+  acquired. v0.1 ships unsigned by decision, which is acceptable for deliberate
+  early users but **cannot meet the F6 gate** — "installable by a stranger" is
+  impossible unsigned. Required before any public announcement.
+
+## Settled
+
+| Question | Outcome | Date |
+|---|---|---|
+| T1 — ICP contradiction | Experienced PKM users in decline, not non-technical beginners (`icp.md`) | 2026-08-22 |
+| T2 — Offline-first vs LLM | Fully functional offline; no note content leaves the device without an explicit per-action decision (`hypotheses-and-risks.md`) | 2026-08-22 |
+| T3 — Opinionated vs power users | Became hypothesis H1 (see above) | 2026-08-22 |
+| H3 — is "start clean" acceptable? | Start clean, **against the evidence**, as a deliberate bet (ADR 0003) | 2026-08-22 |
+| H4 — is "capture less" the answer to O2.2? | **Supported**: two months of sustained use with a narrower template, self-reported higher productivity. n=1, interested subject. | 2026-08-22 |
+| Discovery method | No guaranteed access to interviewees; F1 ran on secondary research plus self-interview | 2026-08-22 |
 
 ## Current phase
 
@@ -102,3 +125,4 @@ F3.5 — MVP spec with a fixed appetite. Closes F3.
 | 2026-08-22 | F3 | Second prototype iteration. Two model gaps found and closed: hierarchy (one level, was undefined) and check-out scope (was demanding classification of unmarked blocks — refusal 2 violation). Timestamps now recorded on first keystroke. |
 | 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
 | 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
+| 2026-08-22 | F4 | F4.1 done. ADR 0004 records Tauri + SolidJS retroactively with alternatives and four revision triggers. H5 reframed: the risk is reviewing agent-written Rust, not writing it — hence the line-by-line review rule in CLAUDE.md. |
