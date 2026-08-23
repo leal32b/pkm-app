@@ -73,11 +73,12 @@ Raised in F1.1 (see [`docs/discovery/self-interview.md`](discovery/self-intervie
 
 ## Current phase
 
-**F3 — Solution design.** F2 closed 2026-08-22.
+**F3 — Solution design.** F3.1 to F3.3 complete. Next: F3.4 (OS conventions and
+support matrix).
 
 ## Next step
 
-F3.3 — prototype the journal screen and the check-out audit, in Claude Design.
+F3.4 — per-OS conventions and the supported-platform matrix.
 
 ## Session log
 
@@ -99,3 +100,4 @@ F3.3 — prototype the journal screen and the check-out audit, in Claude Design.
 | 2026-08-22 | F3 | F3.2 done. ADR 0003: start clean, no import — decided against the evidence, with revision triggers. Main flow defined in five moments; Moment 4 (collect) in MVP as minimal, first to cut. |
 | 2026-08-22 | F3 | F3.3 prototyped in Claude Design. Prototype exposed a model flaw: type and task state had been collapsed into one channel, making a block unable to be both. Fixed in taxonomy — three axes, three channels. Timestamps decided. |
 | 2026-08-22 | F3 | Second prototype iteration. Two model gaps found and closed: hierarchy (one level, was undefined) and check-out scope (was demanding classification of unmarked blocks — refusal 2 violation). Timestamps now recorded on first keystroke. |
+| 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
