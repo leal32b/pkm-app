@@ -78,7 +78,7 @@ support matrix).
 
 ## Next step
 
-F3.4 — per-OS conventions and the supported-platform matrix.
+F3.5 — MVP spec with a fixed appetite. Closes F3.
 
 ## Session log
 
@@ -101,3 +101,4 @@ F3.4 — per-OS conventions and the supported-platform matrix.
 | 2026-08-22 | F3 | F3.3 prototyped in Claude Design. Prototype exposed a model flaw: type and task state had been collapsed into one channel, making a block unable to be both. Fixed in taxonomy — three axes, three channels. Timestamps decided. |
 | 2026-08-22 | F3 | Second prototype iteration. Two model gaps found and closed: hierarchy (one level, was undefined) and check-out scope (was demanding classification of unmarked blocks — refusal 2 violation). Timestamps now recorded on first keystroke. |
 | 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
+| 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
