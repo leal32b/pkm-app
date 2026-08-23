@@ -14,12 +14,40 @@ verified against: Tauri v2 official docs, 2026-08-22
 
 | Tier | Platforms | Commitment |
 |---|---|---|
-| **Primary** | macOS (Apple Silicon) | Developed on, tested every build, blocks release |
-| **Supported** | Windows 11, Ubuntu LTS | Built in CI every commit, smoke-tested before release, bugs block release |
-| **Best effort** | other Linux distributions, Intel macOS, Windows 10 | Built, not tested; bugs accepted but not release-blocking |
+| **Primary** | macOS (Apple Silicon) | Developed on, launched and used daily, blocks release |
+| **Best effort** | Windows 11, Ubuntu LTS | Built in CI every commit; **never launched by the maintainer**. Bugs are accepted and triaged but do not block release. |
+| **Unsupported** | everything else | Not built, not promised |
 
-Anything below "supported" is not promised. Saying so publicly is cheaper than
-disappointing someone later.
+**Only macOS is verified.** The maintainer has no access to a Windows or Linux
+machine, so the other two are compiled but never run. CI proves the code
+compiles; it says nothing about whether the webview renders correctly — and
+webview divergence is precisely the risk this document exists to name.
+
+Calling them "supported" would be a promise that cannot be kept. The gap is
+recorded here so it is a known limitation rather than a discovered one.
+
+### What this obliges
+
+- **README states it plainly** from the first release: verified on macOS,
+  best-effort elsewhere, help wanted.
+- **Linux and Windows bugs are not release blockers.** A solo maintainer cannot
+  debug a rendering issue on a machine he does not have.
+- **This is the strongest argument for a design that stays inside the common
+  subset of all three engines** — see below. Restraint is not aesthetic here,
+  it is the only available substitute for testing.
+
+### How the gap could close
+
+Cheapest first, none of them required for the MVP:
+
+1. **A first Linux or Windows user who reports back.** Free, and the most likely
+   path. The README's "help wanted" exists for this.
+2. **A Windows VM or a cheap used machine.** Modest cost, real verification.
+3. **Screenshot tests in CI.** Catches gross rendering breakage without a
+   machine, but is real engineering effort and belongs to F7 at the earliest.
+
+Promoting a platform to Primary requires the maintainer to actually launch and
+use the app there. Nothing less counts.
 
 ## Why the WebView matters more here than in a web app
 
@@ -52,9 +80,10 @@ makes this cheap to honour — a wall of gradients would not.
 
 ## Testing obligation
 
-**The walking skeleton must be installed and opened on all three platforms
-before F5 proceeds.** Not built in CI — actually launched. CI proves it compiles;
-only a real launch proves the webview renders.
+**The walking skeleton must be launched and used on macOS before F5 proceeds.**
+On Windows and Linux, the obligation is only that CI produces an installable
+artefact — nobody will open it. This is a known, accepted blind spot, not an
+oversight.
 
 This is why the CI matrix has to exist from the first skeleton (F4/F5): macOS
 builds cannot be produced off a macOS machine, and deferring the matrix
