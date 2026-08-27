@@ -35,8 +35,9 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
 | [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
 | [0004](adr/0004-tauri-and-solidjs.md) | Tauri v2 (2.11.x) + SolidJS, retroactive | 2026-08-22 |
-| [0005](adr/0005-core-ui-boundary.md) | Core↔UI boundary: thin core, plain text, split parser | 2026-08-22 |
-| [0006](adr/0006-data-format.md) | Data format: one Markdown file per day, files are the source of truth | 2026-08-22 |
+| [0005](adr/0005-core-ui-boundary.md) | Core↔UI boundary: thin core, plain text, split parser | 2026-08-26 |
+| [0006](adr/0006-data-format.md) | Data format: one Markdown file per day, files are the source of truth | 2026-08-26 |
+| [0007](adr/0007-updater-and-signing-keys.md) | Updater deferred; signing key pair generated now | 2026-08-26 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -84,6 +85,9 @@ Live items only. Settled decisions move to the log below.
   acquired. v0.1 ships unsigned by decision, which is acceptable for deliberate
   early users but **cannot meet the F6 gate** — "installable by a stranger" is
   impossible unsigned. Required before any public announcement.
+- **Updater signing key.** Must be generated before the first release and stored
+  in a password manager along with its password. Losing it permanently strands
+  the installed base (ADR 0007). **Not yet generated.**
 
 ## Settled
 
@@ -127,6 +131,7 @@ F3.5 — MVP spec with a fixed appetite. Closes F3.
 | 2026-08-22 | F3 | Second prototype iteration. Two model gaps found and closed: hierarchy (one level, was undefined) and check-out scope (was demanding classification of unmarked blocks — refusal 2 violation). Timestamps now recorded on first keystroke. |
 | 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
 | 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
-| 2026-08-22 | F4 | F4.1 done. ADR 0004 records Tauri + SolidJS retroactively with alternatives and four revision triggers. H5 reframed: the risk is reviewing agent-written Rust, not writing it — hence the line-by-line review rule in CLAUDE.md. |
-| 2026-08-22 | F4 | F4.2 done. ADR 0005: core owns file I/O, atomic writes, data location, format version and reference extraction; frontend owns the editor and live highlighting. Plain text is the source of truth. Autosave debounced ~1s. Parsing split — highlighting in TS, extraction in Rust, Rust wins on disagreement. |
-| 2026-08-22 | F4 | F4.3 done. ADR 0006: one Markdown file per day, front matter for day-level data, `{ }` marks at block start only. Files are the source of truth; any future index is a derived cache. Format stress-tested — pasted code and duplicated task state both broke the first draft and were fixed. |
+| 2026-08-26 | F4 | F4.1 done. ADR 0004 records Tauri + SolidJS retroactively with alternatives and four revision triggers. H5 reframed: the risk is reviewing agent-written Rust, not writing it — hence the line-by-line review rule in CLAUDE.md. |
+| 2026-08-26 | F4 | F4.2 done. ADR 0005: core owns file I/O, atomic writes, data location, format version and reference extraction; frontend owns the editor and live highlighting. Plain text is the source of truth. Autosave debounced ~1s. Parsing split — highlighting in TS, extraction in Rust, Rust wins on disagreement. |
+| 2026-08-26 | F4 | F4.3 done. ADR 0006: one Markdown file per day, front matter for day-level data, `{ }` marks at block start only. Files are the source of truth; any future index is a derived cache. Format stress-tested — pasted code and duplicated task state both broke the first draft and were fixed. |
+| 2026-08-26 | F4 | F4.4 done. ADR 0007: updater deferred to v0.2, but the signing key pair must be generated now — losing it makes updating the installed base impossible. Static manifest in GitHub Releases; signing before updater, in that order. |
