@@ -36,6 +36,7 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 | [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
 | [0004](adr/0004-tauri-and-solidjs.md) | Tauri v2 (2.11.x) + SolidJS, retroactive | 2026-08-22 |
 | [0005](adr/0005-core-ui-boundary.md) | Core↔UI boundary: thin core, plain text, split parser | 2026-08-22 |
+| [0006](adr/0006-data-format.md) | Data format: one Markdown file per day, files are the source of truth | 2026-08-22 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -128,3 +129,4 @@ F3.5 — MVP spec with a fixed appetite. Closes F3.
 | 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
 | 2026-08-22 | F4 | F4.1 done. ADR 0004 records Tauri + SolidJS retroactively with alternatives and four revision triggers. H5 reframed: the risk is reviewing agent-written Rust, not writing it — hence the line-by-line review rule in CLAUDE.md. |
 | 2026-08-22 | F4 | F4.2 done. ADR 0005: core owns file I/O, atomic writes, data location, format version and reference extraction; frontend owns the editor and live highlighting. Plain text is the source of truth. Autosave debounced ~1s. Parsing split — highlighting in TS, extraction in Rust, Rust wins on disagreement. |
+| 2026-08-22 | F4 | F4.3 done. ADR 0006: one Markdown file per day, front matter for day-level data, `{ }` marks at block start only. Files are the source of truth; any future index is a derived cache. Format stress-tested — pasted code and duplicated task state both broke the first draft and were fixed. |
