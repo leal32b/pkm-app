@@ -25,12 +25,18 @@ states that phase F5 has started.
 
 ## Stack
 
-- Core: **Rust** via **Tauri**. The maintainer has zero Rust experience — keep
-  the core thin, prefer clarity over cleverness, and explain unfamiliar idioms.
+- Core: **Rust** via **Tauri v2**, pinned to the 2.11.x line (ADR 0004).
+  The maintainer has zero Rust experience — keep the core thin, prefer clarity
+  over cleverness, and explain unfamiliar idioms.
 - Frontend: **SolidJS** + TypeScript.
-- Before asserting anything about Tauri APIs, plugins or configuration, **consult
-  the official docs for the version pinned in this repo**. The API changed
-  significantly across major versions; do not answer from memory.
+- Before asserting anything about Tauri APIs, plugins or configuration,
+  **consult the official docs for the pinned version**. The API changed
+  significantly across majors; do not answer from memory.
+
+### Rust review rule
+**No Rust is merged that the maintainer cannot explain line by line.** If
+generated code cannot be followed, simplify it — do not merge it. He is the
+only reviewer, and this application holds other people's personal notes.
 
 ## Conventions
 
