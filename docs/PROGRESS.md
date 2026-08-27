@@ -35,6 +35,7 @@ next is F1.2 (secondary research to corroborate the candidate pains).
 | [0002](adr/0002-license-agpl-3-0.md) | AGPL-3.0-or-later + DCO, no CLA | 2026-08-16 |
 | [0003](adr/0003-start-clean-no-import.md) | Start clean — no import of existing graphs | 2026-08-22 |
 | [0004](adr/0004-tauri-and-solidjs.md) | Tauri v2 (2.11.x) + SolidJS, retroactive | 2026-08-22 |
+| [0005](adr/0005-core-ui-boundary.md) | Core↔UI boundary: thin core, plain text, split parser | 2026-08-22 |
 
 Process artifacts:
 - `docs/internal/copilot-prompt.md` — the master prompt that drives the
@@ -126,3 +127,4 @@ F3.5 — MVP spec with a fixed appetite. Closes F3.
 | 2026-08-22 | F3 | F3.3 closed after five prototype iterations in Claude Design. Four model gaps found and fixed: one-level hierarchy, check-out scope, focus as task references, and `waiting` without a person as a valid temporary state closed at check-out. |
 | 2026-08-22 | F3 | F3.4 done. Support tiers set (macOS primary; Windows 11 and Ubuntu LTS supported). WebView divergence documented — macOS WebKit sets the CSS/JS baseline. OS conventions kept deliberately shallow: native chrome, system fonts, OS-driven theme. |
 | 2026-08-22 | F4 | F4.1 done. ADR 0004 records Tauri + SolidJS retroactively with alternatives and four revision triggers. H5 reframed: the risk is reviewing agent-written Rust, not writing it — hence the line-by-line review rule in CLAUDE.md. |
+| 2026-08-22 | F4 | F4.2 done. ADR 0005: core owns file I/O, atomic writes, data location, format version and reference extraction; frontend owns the editor and live highlighting. Plain text is the source of truth. Autosave debounced ~1s. Parsing split — highlighting in TS, extraction in Rust, Rust wins on disagreement. |
